@@ -1,9 +1,15 @@
+# Functional synthesis benchmarks
+
+The [release](https://github.com/5nizza/relation-determinization/releases) contains the actual files.
+
 These QBF benchmarks are from the field of reactive synthesis. There, given a behavioural specification, we want to automatically synthesize a system that satisfies the specification. The problem can be reduced to solving safety games. A classical approach to solving safety games is done in three steps: first, we find a winning region (the set of states from which the game can be won); second, we find a _non_-deterministic strategy to always stay in the winning region; and third, we extract one possible deterministic strategy. The strategy determinization can be formulated as a Boolean relation determinization problem, i.e., functional synthesis. The presented benchmarks do exactly that.
 
 Each benchmark encodes a formula of the form:
+
 $$
 \forall i,t.\exists o{:}~ W(t) \rightarrow \mathit{SafeTransIntoW}(t,i,o)
 $$
+
 where:
 - $W(t)$ is a function characterising the winning region of a safety game; it depends only on state variables.
 - $\mathit{SafeTransIntoW}(t,i,o)$ is true if and only if the $(i,o)$-transition from $t$ leads into a position in the winning region.
